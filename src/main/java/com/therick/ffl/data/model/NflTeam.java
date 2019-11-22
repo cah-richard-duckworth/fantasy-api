@@ -13,7 +13,8 @@ public class NflTeam {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@OneToMany(targetEntity = Player.class)
+
+	@OneToMany(mappedBy = "nflTeam")
 	private Collection<Player> players;
 
 	public int getId() {

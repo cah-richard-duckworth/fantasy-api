@@ -14,7 +14,8 @@ public class Position {
 	private int id;
 	private String name;
 	private String abbreviation;
-	@OneToMany(targetEntity = Player.class)
+
+	@OneToMany(mappedBy = "position")
 	private Collection<Player> players;
 
 	public int getId() {

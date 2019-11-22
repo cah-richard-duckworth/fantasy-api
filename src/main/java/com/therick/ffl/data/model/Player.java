@@ -13,11 +13,16 @@ public class Player {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@ManyToOne(targetEntity = Position.class)
+
+	@ManyToOne
+	@JoinColumn(name = "position_id", nullable = false)
 	private Position position;
-	@ManyToOne(targetEntity = NflTeam.class)
+
+	@ManyToOne
+	@JoinColumn(name = "nfl_team_id", nullable = false)
 	private NflTeam nflTeam;
-	@ManyToMany(targetEntity = FantasyTeam.class)
+
+	@ManyToMany(mappedBy = "players")
 	private Collection<FantasyTeam> fantasyTeams;
 
 	public int getId() {

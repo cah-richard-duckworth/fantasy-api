@@ -16,7 +16,8 @@ public class User {
 	private String email;
 	private String username;
 	private String password;
-	@OneToMany(targetEntity = FantasyTeam.class)
+
+	@OneToMany(mappedBy = "user")
 	private Collection<FantasyTeam> fantasyTeams;
 
 	public int getId() {

@@ -13,9 +13,17 @@ public class FantasyTeam {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@ManyToOne(targetEntity = User.class)
+
+	@ManyToOne
+	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
-	@ManyToMany(targetEntity = Player.class)
+
+	@ManyToMany
+	@JoinTable(
+			name = "fantasy_team_player",
+			joinColumns = @JoinColumn(name = "fantasy_team_id"),
+			inverseJoinColumns = @JoinColumn(name = "player_id")
+	)
 	private Collection<Player> players;
 
 	public int getId() {

@@ -120,52 +120,103 @@ INSERT INTO POSITION (name, abbreviation)
 VALUES ( 'Defense', 'Def' );
 
 -- Players
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Dak Prescott', 1 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Dak Prescott', 1, 9 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Aaron Rodgers', 1 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Aaron Rodgers', 1, 12 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Ryquell Armstead', 2 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Ryquell Armstead', 2, 15 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Ezekiel Elliot', 2 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Ezekiel Elliot', 2, 9 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Josh Jacobs', 2 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Josh Jacobs', 2, 25 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Jaylen Samuels', 2 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Jaylen Samuels', 2, 27 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Brandin Cooks', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Brandin Cooks', 3, 18 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Tyreek Hill', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Tyreek Hill', 3, 16 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Marvin Jones', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Marvin Jones', 3, 11 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Demarcus Robinson', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Demarcus Robinson', 3, 16 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Deebo Samuel', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Deebo Samuel', 3, 28 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Emmanuel Sanders', 3 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Emmanuel Sanders', 3, 28 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Darren Fells', 4 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Darren Fells', 4, 13 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Austin Hooper', 4 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Austin Hooper', 4, 2 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Greg Zuerlein', 5 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Greg Zuerlein', 5, 18 );
 
-INSERT INTO PLAYER (name, position_id)
-VALUES ( 'Oakland Raiders', 6 );
+INSERT INTO PLAYER (name, position_id, nfl_team_id)
+VALUES ( 'Oakland Raiders', 6, 25 );
 
 -- Fantasy Teams
+INSERT INTO FANTASY_TEAM (name, user_id)
+VALUES ( 'Zeke Squad', 1 );
+
+-- Fantasy Team Players
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 1 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 2 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 3 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 4 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 5 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 6 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 7 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 8 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 9 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 10 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 11 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 12 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 13 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 14 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 15 );
+
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
+VALUES ( 1, 16 );
