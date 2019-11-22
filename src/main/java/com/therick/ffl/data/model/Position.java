@@ -2,6 +2,7 @@ package com.therick.ffl.data.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * @author Richard W. Duckworth
@@ -16,7 +17,14 @@ public class Position {
 	private String abbreviation;
 
 	@OneToMany(mappedBy = "position")
-	private Collection<Player> players;
+	private Set<Player> players;
+
+	public Position() {}
+
+	public Position(String name, String abbreviation) {
+		this.name = name;
+		this.abbreviation = abbreviation;
+	}
 
 	public int getId() {
 		return id;
@@ -42,11 +50,11 @@ public class Position {
 		this.abbreviation = abbreviation;
 	}
 
-	public Collection<Player> getPlayers() {
+	public Set<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Collection<Player> players) {
+	public void setPlayers(Set<Player> players) {
 		this.players = players;
 	}
 }

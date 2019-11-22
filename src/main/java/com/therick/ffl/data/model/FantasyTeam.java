@@ -2,6 +2,7 @@ package com.therick.ffl.data.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * @author Richard W. Duckworth
@@ -24,7 +25,13 @@ public class FantasyTeam {
 			joinColumns = @JoinColumn(name = "fantasy_team_id"),
 			inverseJoinColumns = @JoinColumn(name = "player_id")
 	)
-	private Collection<Player> players;
+	private Set<Player> players;
+
+	public FantasyTeam() {}
+
+	public FantasyTeam(String name) {
+		this.name = name;
+	}
 
 	public int getId() {
 		return id;
@@ -50,11 +57,11 @@ public class FantasyTeam {
 		this.user = user;
 	}
 
-	public Collection<Player> getPlayers() {
+	public Set<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Collection<Player> players) {
+	public void setPlayers(Set<Player> players) {
 		this.players = players;
 	}
 }

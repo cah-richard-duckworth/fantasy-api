@@ -2,6 +2,7 @@ package com.therick.ffl.data.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * @author Richard W. Duckworth
@@ -23,7 +24,13 @@ public class Player {
 	private NflTeam nflTeam;
 
 	@ManyToMany(mappedBy = "players")
-	private Collection<FantasyTeam> fantasyTeams;
+	private Set<FantasyTeam> fantasyTeams;
+
+	public Player() {}
+
+	public Player(String name) {
+		this.name = name;
+	}
 
 	public int getId() {
 		return id;
@@ -57,11 +64,11 @@ public class Player {
 		this.nflTeam = nflTeam;
 	}
 
-	public Collection<FantasyTeam> getFantasyTeams() {
+	public Set<FantasyTeam> getFantasyTeams() {
 		return fantasyTeams;
 	}
 
-	public void setFantasyTeams(Collection<FantasyTeam> fantasyTeams) {
+	public void setFantasyTeams(Set<FantasyTeam> fantasyTeams) {
 		this.fantasyTeams = fantasyTeams;
 	}
 }

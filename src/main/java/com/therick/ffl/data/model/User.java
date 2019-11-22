@@ -2,6 +2,7 @@ package com.therick.ffl.data.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * @author Richard W. Duckworth
@@ -18,7 +19,16 @@ public class User {
 	private String password;
 
 	@OneToMany(mappedBy = "user")
-	private Collection<FantasyTeam> fantasyTeams;
+	private Set<FantasyTeam> fantasyTeams;
+
+	public User() {}
+
+	public User(String name, String email, String username, String password) {
+		this.name = name;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+	}
 
 	public int getId() {
 		return id;
@@ -60,11 +70,11 @@ public class User {
 		this.password = password;
 	}
 
-	public Collection<FantasyTeam> getFantasyTeams() {
+	public Set<FantasyTeam> getFantasyTeams() {
 		return fantasyTeams;
 	}
 
-	public void setFantasyTeams(Collection<FantasyTeam> fantasyTeams) {
+	public void setFantasyTeams(Set<FantasyTeam> fantasyTeams) {
 		this.fantasyTeams = fantasyTeams;
 	}
 }
