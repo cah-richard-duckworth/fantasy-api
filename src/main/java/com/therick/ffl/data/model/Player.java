@@ -1,6 +1,7 @@
 package com.therick.ffl.data.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -22,8 +23,12 @@ public class Player {
 	@JoinColumn(name = "nfl_team_id", nullable = false)
 	private NflTeam nflTeam;
 
-	@ManyToMany(mappedBy = "players")
-	private Set<FantasyTeam> fantasyTeams;
+	@OneToMany(
+			mappedBy = "player",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private Set<FantasyTeamPlayer> fantasyTeams;
 
 	public Player() {}
 
@@ -63,11 +68,28 @@ public class Player {
 		this.nflTeam = nflTeam;
 	}
 
-	public Set<FantasyTeam> getFantasyTeams() {
+	public Set<FantasyTeamPlayer> getFantasyTeams() {
 		return fantasyTeams;
 	}
 
-	public void setFantasyTeams(Set<FantasyTeam> fantasyTeams) {
+	public void setFantasyTeams(Set<FantasyTeamPlayer> fantasyTeams) {
 		this.fantasyTeams = fantasyTeams;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Player player = (Player) o;
+		return name.equals(player.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
 	}
 }

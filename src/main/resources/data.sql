@@ -173,50 +173,50 @@ INSERT INTO FANTASY_TEAM (name, user_id)
 VALUES ( 'Zeke Squad', 1 );
 
 -- Fantasy Team Players
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 1 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 1, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 2 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 2, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 3 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 3, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 4 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 4, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 5 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 5, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 6 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 6, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 7 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 7, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 8 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 8, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 9 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 9, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 10 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 10, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 11 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 11, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 12 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 12, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 13 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 13, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 14 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 14, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 15 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 15, false );
 
-INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id)
-VALUES ( 1, 16 );
+INSERT INTO FANTASY_TEAM_PLAYER (fantasy_team_id, player_id, start)
+VALUES ( 1, 16, false );
