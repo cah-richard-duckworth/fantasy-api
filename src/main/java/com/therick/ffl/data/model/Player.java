@@ -8,15 +8,16 @@ import java.util.Collection;
  * @created 11/21/2019
  */
 @Entity
-public class User {
+public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String email;
-	private String username;
-	private String password;
-	@OneToMany(targetEntity = FantasyTeam.class)
+	@ManyToOne(targetEntity = Position.class)
+	private Position position;
+	@ManyToOne(targetEntity = NflTeam.class)
+	private NflTeam nflTeam;
+	@ManyToMany(targetEntity = FantasyTeam.class)
 	private Collection<FantasyTeam> fantasyTeams;
 
 	public int getId() {
@@ -35,28 +36,20 @@ public class User {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public Position getPosition() {
+		return position;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 
-	public String getUsername() {
-		return username;
+	public NflTeam getNflTeam() {
+		return nflTeam;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setNflTeam(NflTeam nflTeam) {
+		this.nflTeam = nflTeam;
 	}
 
 	public Collection<FantasyTeam> getFantasyTeams() {
