@@ -1,7 +1,6 @@
 package com.therick.ffl.data.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Set;
 
 /**
