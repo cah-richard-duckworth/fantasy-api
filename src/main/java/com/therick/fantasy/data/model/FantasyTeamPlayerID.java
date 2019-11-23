@@ -1,4 +1,4 @@
-package com.therick.ffl.data.model;
+package com.therick.fantasy.data.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

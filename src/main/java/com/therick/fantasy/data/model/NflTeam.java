@@ -1,6 +1,7 @@
-package com.therick.ffl.data.model;
+package com.therick.fantasy.data.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -8,21 +9,19 @@ import java.util.Set;
  * @created 11/21/2019
  */
 @Entity
-public class Position {
+public class NflTeam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String abbreviation;
 
-	@OneToMany(mappedBy = "position")
+	@OneToMany(mappedBy = "nflTeam")
 	private Set<Player> players;
 
-	public Position() {}
+	public NflTeam() {}
 
-	public Position(String name, String abbreviation) {
+	public NflTeam(String name) {
 		this.name = name;
-		this.abbreviation = abbreviation;
 	}
 
 	public int getId() {
@@ -41,19 +40,28 @@ public class Position {
 		this.name = name;
 	}
 
-	public String getAbbreviation() {
-		return abbreviation;
-	}
-
-	public void setAbbreviation(String abbreviation) {
-		this.abbreviation = abbreviation;
-	}
-
 	public Set<Player> getPlayers() {
 		return players;
 	}
 
 	public void setPlayers(Set<Player> players) {
 		this.players = players;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		NflTeam nflTeam = (NflTeam) o;
+		return name.equals(nflTeam.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
 	}
 }

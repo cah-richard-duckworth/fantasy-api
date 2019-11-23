@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 -- Users
 -- In the real world we would encrypt password
 INSERT INTO USER (name, email, username, password)

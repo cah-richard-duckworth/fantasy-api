@@ -1,4 +1,4 @@
-package com.therick.ffl;
+package com.therick.fantasy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
