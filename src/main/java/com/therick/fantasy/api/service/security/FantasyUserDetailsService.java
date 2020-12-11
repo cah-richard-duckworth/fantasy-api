@@ -1,4 +1,4 @@
-package com.therick.fantasy.web.security;
+package com.therick.fantasy.api.service.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

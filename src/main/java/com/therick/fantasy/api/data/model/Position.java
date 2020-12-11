@@ -1,4 +1,4 @@
-package com.therick.fantasy.data.model;
+package com.therick.fantasy.api.data.model;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -9,27 +9,21 @@ import java.util.Set;
  * @created 11/21/2019
  */
 @Entity
-public class FantasyTeam {
+public class Position {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private String abbreviation;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = false)
-	private User user;
+	@OneToMany(mappedBy = "position")
+	private Set<Player> players;
 
-	@OneToMany(
-			mappedBy = "fantasyTeam",
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
-	)
-	private Set<FantasyTeamPlayer> players;
+	public Position() {}
 
-	public FantasyTeam() {}
-
-	public FantasyTeam(String name) {
+	public Position(String name, String abbreviation) {
 		this.name = name;
+		this.abbreviation = abbreviation;
 	}
 
 	public int getId() {
@@ -48,19 +42,19 @@ public class FantasyTeam {
 		this.name = name;
 	}
 
-	public User getUser() {
-		return user;
+	public String getAbbreviation() {
+		return abbreviation;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setAbbreviation(String abbreviation) {
+		this.abbreviation = abbreviation;
 	}
 
-	public Set<FantasyTeamPlayer> getPlayers() {
+	public Set<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Set<FantasyTeamPlayer> players) {
+	public void setPlayers(Set<Player> players) {
 		this.players = players;
 	}
 
@@ -72,12 +66,13 @@ public class FantasyTeam {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		FantasyTeam that = (FantasyTeam) o;
-		return name.equals(that.name);
+		Position position = (Position) o;
+		return name.equals(position.name) &&
+				abbreviation.equals(position.abbreviation);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(name);
+		return Objects.hash(name, abbreviation);
 	}
 }

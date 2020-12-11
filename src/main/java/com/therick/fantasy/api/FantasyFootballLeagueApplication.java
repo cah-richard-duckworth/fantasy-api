@@ -1,4 +1,4 @@
-package com.therick.fantasy;
+package com.therick.fantasy.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

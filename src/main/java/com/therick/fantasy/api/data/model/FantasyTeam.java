@@ -1,4 +1,4 @@
-package com.therick.fantasy.data.model;
+package com.therick.fantasy.api.data.model;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -9,18 +9,26 @@ import java.util.Set;
  * @created 11/21/2019
  */
 @Entity
-public class NflTeam {
+public class FantasyTeam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 
-	@OneToMany(mappedBy = "nflTeam")
-	private Set<Player> players;
+	@ManyToOne
+	@JoinColumn(name = "user_id", nullable = false)
+	private User user;
 
-	public NflTeam() {}
+	@OneToMany(
+			mappedBy = "fantasyTeam",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private Set<FantasyTeamPlayer> players;
 
-	public NflTeam(String name) {
+	public FantasyTeam() {}
+
+	public FantasyTeam(String name) {
 		this.name = name;
 	}
 
@@ -40,11 +48,19 @@ public class NflTeam {
 		this.name = name;
 	}
 
-	public Set<Player> getPlayers() {
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Set<FantasyTeamPlayer> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Set<Player> players) {
+	public void setPlayers(Set<FantasyTeamPlayer> players) {
 		this.players = players;
 	}
 
@@ -56,8 +72,8 @@ public class NflTeam {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		NflTeam nflTeam = (NflTeam) o;
-		return name.equals(nflTeam.name);
+		FantasyTeam that = (FantasyTeam) o;
+		return name.equals(that.name);
 	}
 
 	@Override
